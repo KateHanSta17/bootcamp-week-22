@@ -27,10 +27,11 @@ const ThoughtForm = () => {
     try {
       const { data } = await addThought({
         variables: {
-          thoughtText,
-          thoughtAuthor: // TODO: Display the user's username
+            thoughtText,
+            thoughtAuthor: Auth.getLoggedInUsername()
         },
       });
+          // TODO: Display the user's username
 
       setThoughtText('');
     } catch (err) {
