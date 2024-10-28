@@ -19,6 +19,7 @@ const Profile = () => {
   if (
     Auth.loggedIn() && 
     /* TODO: Check if the user's username is strictly equal to the userParam variable's value */
+    Auth.loggedIn().data.me.username === userParam
   ) {
     return <Navigate to="/me" />;
   }

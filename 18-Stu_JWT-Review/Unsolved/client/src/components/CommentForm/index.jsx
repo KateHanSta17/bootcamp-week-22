@@ -20,7 +20,7 @@ const CommentForm = ({ thoughtId }) => {
         variables: {
           thoughtId,
           commentText,
-          commentAuthor: // TODO: Display the user's username
+          commentAuthor: Auth.getLoggedInUsername(),
         },
       });
 

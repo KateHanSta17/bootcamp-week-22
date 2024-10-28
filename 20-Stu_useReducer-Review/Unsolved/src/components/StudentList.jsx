@@ -11,6 +11,7 @@ export default function StudentList() {
   const [newStudentMajor, setNewStudentMajor] = useState('');
 
   // TODO: Add a comment explaining what this state variable will be used for after reviewing it's use in the app
+  // The state variable will be used to store the name of the new major that will be added to the global state when the form is submitted.
   // Your comment here
   const [newMajorName, setNewMajorName] = useState('');
 
@@ -41,6 +42,7 @@ export default function StudentList() {
                         onClick={() => {
                           console.log('StudentList.js: Dispatched remove!');
                           // TODO: Add a comment explaining the functionality of the REMOVE_STUDENT action when it hits the reducer
+                          // The REMOVE_STUDENT action will remove a student from the global state by filtering out the student with the matching id.
                           // Your comment here
                           return dispatch({
                             type: REMOVE_STUDENT,
@@ -85,6 +87,7 @@ export default function StudentList() {
               >
                 <option>Choose major...</option>
                 {/* //TODO: Add a commenting explaining what will happen if a major is added to the "Majors" array */}
+                // If a major is added to the "Majors" array, it will be added to the global state and will be available as an option in the select dropdown.
                 {/* Your comment here */}
                 {state.majors.map((major) => (
                   <option key={major} value={major}>
