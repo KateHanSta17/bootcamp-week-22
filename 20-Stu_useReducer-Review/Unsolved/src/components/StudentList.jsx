@@ -107,7 +107,10 @@ export default function StudentList() {
                 e.preventDefault();
                 console.log('StudentList.js: Dispatched add major! ');
                 // TODO: Explain what happens when the ADD_MAJOR action is dispatched to the reducer with a new major
+<<<<<<< HEAD
                 // The ADD_MAJOR action will add a new major to the global state by updating the majors array with the new major name.
+=======
+>>>>>>> c56d4813ec8996a383a65a75a8b071cd65b8de2b
                 // Your comment here
                 dispatch({
                   type: ADD_MAJOR,
@@ -118,7 +121,10 @@ export default function StudentList() {
               }}
             >
               {/* //TODO: Does the setNewMajorName method affect local state or global state the way it is used in this onChange event */}
+<<<<<<< HEAD
               // The setNewMajorName method affects the local state by updating the newMajorName state variable with the value of the input field.
+=======
+>>>>>>> c56d4813ec8996a383a65a75a8b071cd65b8de2b
               {/* Your comment here */}
               <input
                 value={newMajorName}
