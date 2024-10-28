@@ -1,5 +1,5 @@
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { /* Todo: Import the required assets from 'react-router-dom' */ } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -16,6 +16,7 @@ function App() {
         <Header />
         <div className="container">
             {/* TODO: Add code here that creates a allows for displaying the home page or single thought's comments */}
+          <Outlet />
         </div>
         <Footer />
       </div>
