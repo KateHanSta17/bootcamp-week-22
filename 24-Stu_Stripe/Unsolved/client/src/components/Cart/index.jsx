@@ -10,7 +10,7 @@ import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
 
 // TODO: Add a comment describing the functionality of loadStripe
-// Your comment here
+// loadStripe is a function that returns a promise that resolves with a Stripe object. This object is used to interact with the Stripe API.
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
@@ -18,7 +18,7 @@ const Cart = () => {
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
   // TODO: Add a comment describing the functionality of the useEffect hook in this instance
-  // Your comment here
+  // useEffect is used to watch for changes to the data object. If the data object changes, the stripePromise is resolved and the user is redirected to the checkout page. 
   useEffect(() => {
     if (data) {
       stripePromise.then((res) => {
@@ -28,7 +28,7 @@ const Cart = () => {
   }, [data]);
 
   // TODO: Add a comment describing what data we are watching and what work should be preformed if that data changes
-  // Your comment here
+  // We are watching the state.cart.length. If the length of the cart changes, we are calling the getCart function to get the cart from the IndexedDB and then dispatching the ADD_MULTIPLE_TO_CART action to update the state.
   useEffect(() => {
     async function getCart() {
       const cart = await idbPromise('cart', 'get');
@@ -53,7 +53,7 @@ const Cart = () => {
   }
 
   // TODO: Add a comment describing the functionality of our submitCheckout function.
-  // Your comment here
+  // The submitCheckout function is used to call the getCheckout query with the products in the cart. This will create a new checkout session with the products in the cart.
   function submitCheckout() {
     getCheckout({
       variables: { 
